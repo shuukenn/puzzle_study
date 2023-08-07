@@ -194,22 +194,6 @@ public class PlayerController : MonoBehaviour
         KeyCode.DownArrow,
     };
 
-    void UpdateInput()
-    {
-        LogicalInput.Key inputDev = 0;
-
-
-        for (int i = 0; i < (int)LogicalInput.Key.MAX; i++)
-        {
-            if (Input.GetKey(Key_code_tbl[i]))
-            {
-                inputDev |= (LogicalInput.Key)(1 << i);
-            }
-        }
-
-        _logicalInput.Update(inputDev);
-    }
-
     bool Fall(bool is_fast)
     {
         _fallCount -= is_fast ? FALL_COUNT_FAST_SPD : FALL_COUNT_SPD;
